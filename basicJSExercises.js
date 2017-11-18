@@ -44,11 +44,13 @@ HINT: Use substring()
  --------------------------- */
 
 function rotate_string(text) {
+    console.log(text);
   for (var i=0;i<text.length; i++)
   {
      text = text.substring(1,text.length) + text[0];
+       console.log(text);
   }
-  console.log(text);
+
 
 }
 
@@ -165,25 +167,21 @@ Output:
 HINT: Use toString() and parseInt() functions
  --------------------------- */
 
-function dash_in_odd(number) {
-  console.log("odd numbers separated by dashes");
-  var arr= number.toString();
-  var final = "";
-  var temp1 = "";
-  var temp2 = "";
-  for(var i=0; i<=arr.length-1; i++)
-  {
-      temp1 = arr[i];
-      temp2 = arr[i+1];
-      if(temp1%2==1 && temp2%2==1)
-      {
-        final = final + "-";
+ function dash_in_odd(number) {
+   console.log("odd numbers separated by dashes");
+   var string = number.toString();
+   var result = [string [0]];
+    for(var x=1; x<string .length; x++)
+     {
+     if((string [x-1]%2 === 1)&&(string [x]%2 === 1))
+      {  result.push('-', string [x]);
+      } else {
+          result.push(string [x]);
       }
-        final = final + temp1;
-  }
-  console.log(final);
-}
+   }
 
+ console.log(result.join(''));
+ }
 console.log("Dash between ODD Numbers:");
   dash_in_odd(100);
   dash_in_odd(1356);
